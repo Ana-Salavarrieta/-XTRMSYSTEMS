@@ -1,70 +1,278 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>xtrmsystems</title>
-    <link rel="stylesheet" href="../styles/home.css">
+
+    <title>dosificacion</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../styles/dosificacion.css">
+
 </head>
+
 <body>
 
-    <!-- inicio nav -->
-    <nav id="navbar">
-        <div class="logo">logo</div>
+    <!-- nav -->
+    <nav>
+
+        <div class="logo">
+            <img src="../multimedia/Logo Version 01.png" alt="XTRM SYSTEMS" style="height: 40px;">
+        </div>
 
         <ul class="nav-links">
-            <li><a href="#inicio">Home</a></li> 
-            <li><a href="#contacto">Contácto</a></li>
+            <li><a href="../pages/index.html">Home</a></li>
+            <li><a href="../pages/productos.html">Antipinchazos</a></li>
+            <li><a href="../pages/doscificacion.html">Dosificación</a></li>
+            <li><a href="#contacto">Contacto</a></li>
         </ul>
 
-        <div class="hamburger" id="hamburger">
+        <div class="hamburger">
             <span></span>
             <span></span>
             <span></span>
         </div>
-    </nav>
-    <!-- fin nav -->
 
-    <!-- hero / inicio -->
-    <section class="hero" id="inicio">
-        <div class="hero-content">
-            <h1>Cuidamos la vida de tu llanta</h1>
-            <img src="productos/antipinchazos.jpg" alt="Producto antipinchazos">
-            <p>Le damos una vida prolongada a tu llanta</p>
+    </nav>
+
+    <!-- canvas -->
+    <canvas></canvas>
+
+    <!-- hero -->
+    <section class="hero">
+
+        <div class="hero-top">
+
+            <div class="hero-title">
+
+                <h1>
+                    Dosificación inteligente
+                    para cada tipo de llanta
+                </h1>
+
+            </div>
+
+            <div class="hero-description">
+
+                <p>
+                    Calcula la cantidad ideal de producto según
+                    el tamaño de tu llanta y obtén una protección
+                    eficaz y duradera con XTRM SYSTEMS.
+                </p>
+
+            </div>
+
         </div>
+
+    </section>
+
+    <!-- calculadora -->
+    <section class="calculadora">
+
+        <!-- titulo -->
+        <div class="calculadora-titulo">
+
+            <h2>
+                DOSIFICACIÓN XTRM T3
+            </h2>
+
+        </div>
+
+        <!-- categorias -->
+        <div class="categorias">
+
+            <button>
+                Patinetas
+            </button>
+
+            <button class="active">
+                Motos
+            </button>
+
+            <button>
+                Bicicletas
+            </button>
+
+        </div>
+
+        <!-- contenido -->
+        <div class="calculadora-container">
+
+            <!-- imagen -->
+            <div class="llanta">
+
+                <img src="../multimedia/Llanta moto.png" alt="llanta" style="height: 400px;">
+
+            </div>
+
+            <!-- formulario -->
+            <div class="formulario">
+
+                <h3>
+                    Bicicleta
+                </h3>
+
+                <!-- tipo -->
+                <div class="form-group">
+
+                    <label>
+                        Ancho de neumático
+                    </label>
+
+                    <select>
+
+                        <option>
+                            Tubeless
+                        </option>
+
+                        <option>
+                            Con cámara
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- range -->
+                <div class="form-group">
+
+                    <label>
+                        Ancho del neumático (mm)
+                    </label>
+
+                    <input type="range" min="10" max="100" value="45">
+
+                    <div class="valor-range">
+                        45
+                    </div>
+
+                </div>
+
+                <!-- rueda -->
+                <div class="form-group">
+
+                    <label>
+                        Tamaño de rueda
+                    </label>
+
+                    <select>
+
+                        <option>
+                            29"
+                        </option>
+
+                        <option>
+                            27.5"
+                        </option>
+
+                        <option>
+                            26"
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- boton -->
+                <button class="btn-yellow">
+
+                    Calcular dosificación
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- resultado -->
+    <section class="resultado">
+
+        <div class="resultado-container">
+
+            <h2>
+                Resultado estimado
+            </h2>
+
+            <p>
+                Tu llanta necesita aproximadamente
+                <span>450 ml</span> de producto.
+            </p>
+
+        </div>
+
     </section>
 
     <!-- footer -->
     <footer class="main-footer">
-    <div class="footer-container">
-        <div class="footer-logo">
-            <img src="../multimedia/photo_5170407400912129091_w 1.png" alt="XTRM SYSTEMS">
+
+        <div class="footer-container">
+
+            <div class="footer-logo">
+
+                <img src="../multimedia/Logo Version 01.png" alt="XTRM SYSTEMS">
+
+            </div>
+
+            <div class="footer-contact">
+
+                <h2>
+                    Contacto
+                </h2>
+
+                <div class="emails">
+
+                    <a href="mailto:amoreno@xtrmsystems.com.co">
+                        amoreno@xtrmsystems.com.co
+                    </a>
+
+                    <a href="mailto:rvanegas@xtrmsystems.com.co">
+                        rvanegas@xtrmsystems.com.co
+                    </a>
+
+                </div>
+
+                <p class="phone">
+                    +57 312 5444391
+                </p>
+
+                <div class="social-icons">
+
+                    <a href="#">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="footer-contact">
-            <h2>Contacto</h2>
-            <div class="emails">
-                <a href="mailto:amoreno@xtrmsystems.com.co">amoreno@xtrmsystems.com.co</a>
-                <a href="mailto:rvanegas@xtrmsystems.com.co">rvanegas@xtrmsystems.com.co</a>
-            </div>
-            <p class="phone">+57 312 5444391</p>
-            
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/xtrmsystems?igsh=dGhjMzl5Z3cwdmZp"><i class="fab fa-instagram"></i></a>
-            </div>
+        <div class="footer-bottom">
+
+            <p>
+                &copy; 2026 por XTRM SYSTEMS
+            </p>
+
         </div>
-    </div>
 
-    <div class="footer-bottom">
-        <p>&copy; 2026 por XTRM SYSTEMS</p>
-    </div>
-</footer>
+    </footer>
 
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- script -->
-    <script src="../scripts/script.js"></script>
+    <!-- iconos -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 </body>
+
 </html>
