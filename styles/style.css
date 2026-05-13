@@ -72,11 +72,11 @@ nav{
     left: 0;
     z-index: 1000;
 
-    background: linear-gradient(
+     background: linear-gradient(
         to bottom,
-        rgba(126, 125, 125, 0.9) 0%,
-        rgba(155, 154, 154, 0.4) 30%,
-        rgba(0,0,0,0.9) 100%
+        rgba(80, 80, 80, 0.6) 0%,
+        rgba(40, 40, 40, 0.5) 30%,
+        rgba(0, 0, 0, 0.95) 100%
     );
 
     backdrop-filter: blur(10px);
