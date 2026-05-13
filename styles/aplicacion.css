@@ -1,0 +1,255 @@
+:root {
+    --primary-green: #00b347;
+    --secondary-yellow: #f1c400;
+    --bg-dark: #000000;
+    --text-main: #ffffff;
+    --text-muted: #e0e0e0;
+    --text-copyright: #777777;
+    --transition: all 0.3s ease;
+}
+
+/* generales */
+
+html,
+body {
+    background-color: var(--bg-dark);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-main);
+}
+
+/* canvas */
+
+canvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* capas */
+
+.main-footer,
+nav {
+    position: relative;
+    z-index: 2;
+}
+
+/* navegación */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 5%;
+
+    position: fixed;
+    width: 90%;
+    top: 0;
+    left: 0;
+
+    z-index: 1000;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(80, 80, 80, 0.6) 0%,
+        rgba(40, 40, 40, 0.5) 30%,
+        rgba(0, 0, 0, 0.95) 100%
+    );
+
+    backdrop-filter: blur(10px);
+}
+
+.logo img {
+    height: 40px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 300;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--primary-green);
+}
+
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 0 20px;
+}
+
+
+ .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+
+
+.rueda-escena {
+text-align: center;
+}   
+
+.rueda-escena {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px; 
+
+  }
+.rueda-eje {
+  position: relative;
+  width: 500px;        
+  height: 500px;       
+  transform-style: preserve-3d;
+  transition: transform 0.1s linear; 
+}
+
+.rueda-eje img {
+  position: absolute;
+  width: 100%;
+  background-color: #00b347;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: contain; 
+  backface-visibility: hidden;
+
+  /* Separación angular: 45 grados por imagen. 
+     translateZ(350px) empuja las imágenes hacia afuera creando la rueda */
+  transform: rotateX(calc(var(--index) * 45deg)) translateZ(350px);
+}
+
+/* footer */
+
+.main-footer {
+    background-color: var(--bg-dark);
+    padding: 100px 50px 40px;
+    border-top: 1px solid #1a1a1a;
+}
+
+.footer-container {
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    flex-wrap: wrap;
+
+    gap: 40px;
+}
+
+.footer-logo img {
+    width: 350px;
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.footer-contact h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+.footer-contact a {
+    display: block;
+
+    color: var(--text-muted);
+
+    text-decoration: none;
+
+    margin-bottom: 8px;
+
+    transition: var(--transition);
+}
+
+.footer-contact a:hover {
+    color: var(--secondary-yellow);
+}
+
+.phone {
+    margin-top: 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 28px;
+    transition: var(--transition);
+}
+
+.social-icons a:hover {
+    transform: translateY(-5px);
+    color: var(--primary-green);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 120px;
+}
+
+.footer-bottom p {
+    font-size: 11px;
+    color: var(--text-copyright);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* responsive */
+
+@media (max-width: 768px) {
+
+    nav {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-logo img {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
