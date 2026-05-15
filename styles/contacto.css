@@ -68,9 +68,15 @@ nav {
     backdrop-filter: blur(10px);
 }
 
+/* logo */
+
 .logo img {
     height: 40px;
+    width: auto;
+    object-fit: contain;
 }
+
+/* links nav */
 
 .nav-links {
     display: flex;
@@ -90,6 +96,206 @@ nav {
     color: var(--primary-green);
 }
 
+/* sección contacto */
+
+.contacto {
+    width: 100%;
+    min-height: 100vh;
+
+    background: #000;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 120px 20px;
+
+    box-sizing: border-box;
+}
+
+/* encabezado */
+
+.contacto-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.contacto-header h1 {
+    color: white;
+    font-size: 42px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.contacto-header p {
+    color: #d1d1d1;
+    font-size: 18px;
+    line-height: 1.5;
+    max-width: 700px;
+}
+
+/* formulario */
+
+.formulario {
+    width: 100%;
+    max-width: 700px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 40px;
+}
+
+/* fila */
+
+.fila {
+    display: flex;
+    gap: 20px;
+}
+
+/* campos */
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.campo label {
+    color: white;
+    font-size: 18px;
+}
+
+/* inputs generales */
+
+.campo input,
+.campo textarea {
+    width: 100%;
+    background: transparent;
+    border: 1px solid #8a8a8a;
+    border-radius: 12px;
+    color: white;
+    font-size: 18px;
+    box-sizing: border-box;
+}
+
+/* input normal */
+
+.campo input {
+    height: 55px;
+    padding: 0 20px;
+}
+
+/* textarea */
+
+.campo textarea {
+    height: 280px;
+    padding: 20px;
+    resize: none;
+}
+
+/* telefono */
+
+.telefono-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    width: 100%;
+    height: 55px;
+
+    border: 1px solid #8a8a8a;
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+/* select pais */
+
+.telefono-input select {
+    width: 120px;
+    height: 100%;
+
+    background: black;
+    color: white;
+
+    border: none;
+    border-right: 1px solid #555;
+
+    font-size: 14px;
+
+    padding: 0 10px;
+
+    outline: none;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    cursor: pointer;
+}
+
+/* opciones select */
+
+.telefono-input option {
+    background: black;
+    color: white;
+}
+
+/* input telefono */
+
+.telefono-input input {
+    flex: 1;
+    height: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+    color: white;
+
+    font-size: 18px;
+
+    padding: 0 15px;
+}
+
+/* placeholders */
+
+::placeholder {
+    color: #7a7a7a;
+}
+
+/* boton */
+
+.boton-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.boton-container button {
+    width: 220px;
+    height: 58px;
+
+    border: none;
+    border-radius: 14px;
+
+    background: var(--secondary-yellow);
+    color: var(--bg-dark);
+
+    font-size: 20px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.boton-container button:hover {
+    transform: scale(1.03);
+}
+
 /* footer */
 
 .main-footer {
@@ -98,10 +304,10 @@ nav {
     border-top: 1px solid #1a1a1a;
 }
 
+/* container footer */
+
 .footer-container {
-
     max-width: 1200px;
-
     margin: 0 auto;
 
     display: flex;
@@ -109,15 +315,18 @@ nav {
     align-items: flex-start;
 
     flex-wrap: wrap;
-
     gap: 40px;
 }
+
+/* logo footer */
 
 .footer-logo img {
     width: 350px;
     padding: 12px;
     border-radius: 12px;
 }
+
+/* contacto footer */
 
 .footer-contact h2 {
     font-size: 32px;
@@ -127,13 +336,9 @@ nav {
 
 .footer-contact a {
     display: block;
-
     color: var(--text-muted);
-
     text-decoration: none;
-
     margin-bottom: 8px;
-
     transition: var(--transition);
 }
 
@@ -141,9 +346,13 @@ nav {
     color: var(--secondary-yellow);
 }
 
+/* telefono footer */
+
 .phone {
     margin-top: 20px;
 }
+
+/* redes */
 
 .social-icons {
     display: flex;
@@ -162,6 +371,8 @@ nav {
     color: var(--primary-green);
 }
 
+/* footer bottom */
+
 .footer-bottom {
     text-align: center;
     margin-top: 120px;
@@ -178,6 +389,18 @@ nav {
 
 @media (max-width: 768px) {
 
+    .fila {
+        flex-direction: column;
+    }
+
+    .contacto-header h1 {
+        font-size: 36px;
+    }
+
+    .contacto-header p {
+        font-size: 18px;
+    }
+
     nav {
         width: 100%;
         padding: 20px;
@@ -185,39 +408,6 @@ nav {
 
     .nav-links {
         gap: 15px;
-    }
-
-    .hero-top,
-    .calculadora-container {
-
-        grid-template-columns: 1fr;
-
-        gap: 50px;
-    }
-
-    .hero-title h1 {
-        font-size: 3rem;
-    }
-
-    .calculadora-panel h2 {
-
-        font-size: 2.2rem;
-    }
-
-    .calculadora-imagen img {
-
-        max-width: 220px;
-    }
-
-    .categorias {
-
-        justify-content: center;
-    }
-
-    .slider-container {
-
-        flex-direction: column;
-        align-items: flex-start;
     }
 
     .footer-container {

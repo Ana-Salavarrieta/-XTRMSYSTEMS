@@ -8,8 +8,6 @@
     --transition: all 0.3s ease;
 }
 
-/* generales */
-
 html,
 body {
     background-color: var(--bg-dark);
@@ -17,9 +15,9 @@ body {
     padding: 0;
     width: 100%;
     min-height: 100vh;
-    overflow-x: hidden;
     font-family: Arial, Helvetica, sans-serif;
-    color: var(--text-main);
+    overflow-x: hidden;
+    color: white;
 }
 
 /* canvas */
@@ -34,29 +32,45 @@ canvas {
 
 /* capas */
 
+.hero,
+.body,
 .main-footer,
 nav {
     position: relative;
     z-index: 2;
 }
 
-/* navegación */
-
-nav {
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 30px 50px;
+    background-color: var(--bg-dark);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
+.logo img{
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* --- Navegación --- */
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 20px 5%;
-
     position: fixed;
     width: 90%;
     top: 0;
     left: 0;
-
     z-index: 1000;
 
-    background: linear-gradient(
+     background: linear-gradient(
         to bottom,
         rgba(80, 80, 80, 0.6) 0%,
         rgba(40, 40, 40, 0.5) 30%,
@@ -66,9 +80,6 @@ nav {
     backdrop-filter: blur(10px);
 }
 
-.logo img {
-    height: 40px;
-}
 
 .nav-links {
     display: flex;
@@ -104,43 +115,73 @@ nav {
     margin-bottom: 20px;
 }
 
+/* escenas */
 
+.rueda-escena{
+    position: relative;
+    width: 100%;
+    height: 200vh;
 
-.rueda-escena {
-text-align: center;
-}   
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-.rueda-escena {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  perspective: 1000px; 
-
-  }
-.rueda-eje {
-  position: relative;
-  width: 500px;        
-  height: 500px;       
-  transform-style: preserve-3d;
-  transition: transform 0.1s linear; 
+    overflow: hidden;
 }
 
-.rueda-eje img {
-  position: absolute;
-  width: 100%;
-  background-color: #00b347;
-  height: 100%;
-  top: 0;
-  left: 0;
-  object-fit: contain; 
-  backface-visibility: hidden;
+/* ejes */
 
-  /* Separación angular: 45 grados por imagen. 
-     translateZ(350px) empuja las imágenes hacia afuera creando la rueda */
-  transform: rotateX(calc(var(--index) * 45deg)) translateZ(350px);
+.rueda-eje-1,
+.rueda-eje-2{
+
+    position: sticky;
+    top: 100px;
+
+    width: 100%;
+    height: 100vh;
 }
+
+/* imagenes */
+
+.rueda-eje-1 img,
+.rueda-eje-2 img{
+
+    position: absolute;
+    width: 320px;
+    object-fit: contain;
+    transition: transform 0.2s linear;
+    filter: blur(2px);
+    opacity: 0.8;
+    background-color: #00b347;
+}
+
+/* posiciones iniciales */
+
+.rueda-eje-1 img:nth-child(1){
+    top: 10%;
+    left: 10%;
+    transform: rotate(-20deg);
+}
+
+.rueda-eje-1 img:nth-child(2){
+    top: 50%;
+    left: 55%;
+    transform: rotate(15deg);
+}
+
+.rueda-eje-1 img:nth-child(3){
+    top: 90%;
+    left: 15%;
+    transform: rotate(-10deg);
+}
+
+.rueda-eje-1 img:nth-child(4){
+    top: 120%;
+    left: 60%;
+    transform: rotate(20deg);
+}
+
+
 
 /* footer */
 

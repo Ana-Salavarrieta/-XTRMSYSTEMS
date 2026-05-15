@@ -21,7 +21,6 @@ body {
 }
 
 /* canvas */
-
 canvas {
     position: fixed;
     inset: 0;
@@ -31,7 +30,6 @@ canvas {
 }
 
 /* capas */
-
 .hero,
 .body,
 .main-footer,
@@ -40,28 +38,8 @@ nav {
     z-index: 2;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 50px;
-    background-color: var(--bg-dark);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.logo-text {
-    font-size: 14px;
-    color: var(--text-main);
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-weight: 300;
-}
-
-/* --- Navegación --- */
-
-nav{
+/* NAV */
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -72,7 +50,7 @@ nav{
     left: 0;
     z-index: 1000;
 
-     background: linear-gradient(
+    background: linear-gradient(
         to bottom,
         rgba(80, 80, 80, 0.6) 0%,
         rgba(40, 40, 40, 0.5) 30%,
@@ -82,11 +60,10 @@ nav{
     backdrop-filter: blur(10px);
 }
 
-.logo {
-    color: white;
-    font-size: 1.2rem;
-    font-weight: bold;
-    letter-spacing: 2px;
+.logo img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
 }
 
 .nav-links {
@@ -96,7 +73,7 @@ nav{
 }
 
 .nav-links a {
-    color: #fff;
+    color: var(--text-main);
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 300;
@@ -108,7 +85,6 @@ nav{
 }
 
 /* hero */
-
 .hero {
     width: 100%;
     min-height: 100vh;
@@ -118,23 +94,31 @@ nav{
 }
 
 .hero-content {
-    max-width: 700px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
 }
 
 .hero-content h1 {
+    width: 50%;
     font-size: 5rem;
-    margin-bottom: 25px;
     line-height: 1;
+    text-align: right;
+    margin: -300px 0 0 0;
 }
 
 .hero-content p {
+    width: 40%;
     color: var(--text-muted);
     font-size: 1.2rem;
     line-height: 1.8;
+    text-align: left;
+    margin: 320px 0 0 0;
 }
 
-/* body */
-
+/* Body */
 .body {
     width: 100%;
     padding: 120px 5%;
@@ -145,69 +129,56 @@ nav{
     max-width: 1300px;
 }
 
-/* colombia */
-
+/* Colombia */
 #colombia .body-content {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 100px;
-}
-
-#colombia h1 {
-    width: 35%;
-    font-size: 3.5rem;
-    line-height: 1.1;
+    gap: 120px;
 }
 
 #colombia p {
-    width: 50%;
+    width: 45%;
     color: var(--text-muted);
     line-height: 1.9;
-    margin-top: 15px;
+    text-align: left;
+    margin: 100px 0 0 0;
 }
 
-/* blindaje */
+#colombia h1 {
+    width: 40%;
+    font-size: 5rem;
+    line-height: 1.1;
+    text-align: right;
+    margin: -300px 0 0 0;
+}
 
+/* Bindaje */
 #blindaje .body-content {
-    max-width: 900px;
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* TODO a la derecha */
+    text-align: right;
 }
 
 #blindaje h2 {
-    font-size: 3rem;
-    margin-bottom: 30px;
+    width: 100%;
+    font-size: 3.5rem;
     line-height: 1.1;
+    margin: 0 0 20px 0;
+    text-align: right;
 }
 
 #blindaje p {
+    width: 60%;
     color: var(--text-muted);
     line-height: 1.9;
-    max-width: 800px;
+    margin: 0 0 50px 0;
+    text-align: right;
 }
-
-/* funcionamiento */
-
-#funcionamiento .body-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 100px;
-}
-
-#funcionamiento h2 {
-    width: 35%;
-    font-size: 3rem;
-    line-height: 1.1;
-}
-
-#funcionamiento p {
-    width: 50%;
-    color: var(--text-muted);
-    line-height: 1.9;
-}
-
-/* footer */
-
+/* FOOTER */
 .main-footer {
     background-color: var(--bg-dark);
     padding: 100px 50px 40px;
@@ -256,23 +227,6 @@ nav{
     margin-top: 20px;
 }
 
-.social-icons {
-    display: flex;
-    gap: 25px;
-    margin-top: 35px;
-}
-
-.social-icons a {
-    color: var(--text-main);
-    font-size: 28px;
-    transition: var(--transition);
-}
-
-.social-icons a:hover {
-    transform: translateY(-5px);
-    color: var(--primary-green);
-}
-
 .footer-bottom {
     text-align: center;
     margin-top: 120px;
@@ -286,15 +240,8 @@ nav{
     letter-spacing: 2px;
 }
 
-/* responsive */
-
+/* RESPONSIVE */
 @media (max-width: 768px) {
-
-    header {
-        padding: 20px;
-        flex-direction: column;
-        gap: 20px;
-    }
 
     nav {
         width: 100%;
@@ -305,29 +252,55 @@ nav{
         gap: 15px;
     }
 
+    /* hero */
+    .hero-content {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .hero-content h1,
+    .hero-content p {
+        width: 100%;
+        text-align: center;
+    }
+
     .hero-content h1 {
         font-size: 3rem;
     }
 
-    #colombia .body-content,
-    #funcionamiento .body-content {
+    /* colombia */
+    #colombia .body-content {
         flex-direction: column;
         gap: 30px;
     }
 
     #colombia h1,
-    #colombia p,
-    #funcionamiento h2,
-    #funcionamiento p {
+    #colombia p {
         width: 100%;
+        text-align: center;
     }
 
-    #colombia h1,
+    #colombia h1 {
+        font-size: 3rem;
+    }
+
+    /* blindaje */
+    #blindaje .body-content {
+        align-items: center;
+        text-align: center;
+    }
+
     #blindaje h2,
-    #funcionamiento h2 {
-        font-size: 2.3rem;
+    #blindaje p {
+        text-align: center;
     }
 
+    #blindaje h2 {
+        font-size: 2.5rem;
+    }
+
+    /* footer */
     .footer-container {
         flex-direction: column;
         align-items: center;
@@ -337,9 +310,5 @@ nav{
     .footer-logo img {
         width: 100%;
         max-width: 280px;
-    }
-
-    .social-icons {
-        justify-content: center;
     }
 }

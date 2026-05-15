@@ -6,15 +6,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>dosificacion</title>
+    <title>Dosificación</title>
 
-    <!-- css -->
+    <!-- hoja de estilos -->
     <link rel="stylesheet" href="../styles/dosificacion.css">
 
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 </head>
-
 <body>
-
     <!-- nav -->
     <nav>
 
@@ -46,24 +47,22 @@
         <!-- titulo -->
         <div class="calculadora-titulo">
 
-            <h2>
-                DOSIFICACIÓN XTRM T3
-            </h2>
+            <h2>Dosificación XTRM T3</h2>
 
         </div>
 
         <!-- categorias -->
         <div class="categorias">
 
-            <button class="active">
+            <button class="categoria-btn" data-tipo="patineta">
                 Patinetas
             </button>
 
-            <button class="active">
+            <button class="categoria-btn active" data-tipo="moto">
                 Motos
             </button>
 
-            <button class="active">
+            <button class="categoria-btn" data-tipo="bicicleta">
                 Bicicletas
             </button>
 
@@ -73,51 +72,55 @@
         <div class="calculadora-container">
 
             <!-- imagen -->
-            <div class="llanta">
+            <div class="calculadora-imagen">
 
-                <img src="../multimedia/Llanta moto.png" alt="llanta" style="height: 400px;">
+                <img id="imagen-producto"
+                src="../multimedia/Llanta moto.png"
+                alt="llanta">
 
             </div>
 
-            <!-- formulario -->
-            <div class="formulario">
+            <!-- panel -->
+            <div class="calculadora-panel">
 
-                <h3>
-                    Bicicleta
+                <h3 id="titulo-producto">
+                    Moto
                 </h3>
 
                 <!-- tipo -->
                 <div class="form-group">
 
-                    <label>
-                        Ancho de neumático
-                    </label>
+                    <label>Tipo de neumático</label>
 
                     <select>
 
-                        <option>
-                            Tubeless
-                        </option>
+                        <option>Tubeless</option>
 
-                        <option>
-                            Con cámara
-                        </option>
+                        <option>Con cámara</option>
 
                     </select>
 
                 </div>
 
-                <!-- range -->
+                <!-- slider -->
                 <div class="form-group">
 
                     <label>
                         Ancho del neumático (mm)
                     </label>
 
-                    <input type="range" min="10" max="100" value="45">
+                    <div class="slider-container">
 
-                    <div class="valor-range">
-                        45
+                        <input id="slider"
+                        type="range"
+                        min="10"
+                        max="100"
+                        value="45">
+
+                        <div class="valor-slider" id="valor-slider">
+                            45
+                        </div>
+
                     </div>
 
                 </div>
@@ -125,34 +128,36 @@
                 <!-- rueda -->
                 <div class="form-group">
 
-                    <label>
-                        Tamaño de rueda
-                    </label>
+                    <label>Tamaño de rueda</label>
 
-                    <select>
+                    <select id="rueda-select">
 
-                        <option>
-                            29"
-                        </option>
+                        <option>29"</option>
 
-                        <option>
-                            27.5"
-                        </option>
+                        <option>27.5"</option>
 
-                        <option>
-                            26"
-                        </option>
+                        <option>26"</option>
 
                     </select>
 
                 </div>
 
-                <!-- boton -->
-                <button class="btn-yellow">
+                <!-- botones -->
+                <div class="botones-panel">
 
-                    Calcular dosificación
+                    <button class="btn-yellow">
+                        Calcular dosificación
+                    </button>
 
-                </button>
+                    <a href="../pages/aplicacion.html">
+
+                        <button class="btn-yellow">
+                            Modo de aplicación
+                        </button>
+
+                    </a>
+
+                </div>
 
             </div>
 
@@ -165,13 +170,18 @@
 
         <div class="resultado-container">
 
-            <h2>
-                Resultado estimado
-            </h2>
+            <h2>Resultado estimado</h2>
 
             <p>
+
                 Tu llanta necesita aproximadamente
-                <span>450 ml</span> de producto.
+
+                <span id="resultado-ml">
+                    450 ml
+                </span>
+
+                de producto.
+
             </p>
 
         </div>
@@ -183,17 +193,18 @@
 
         <div class="footer-container">
 
+            <!-- logo -->
             <div class="footer-logo">
 
-                <img src="../multimedia/Logo Version 01.png" alt="XTRM SYSTEMS">
+                <img src="../multimedia/Logo Version 01.png"
+                alt="XTRM SYSTEMS">
 
             </div>
 
+            <!-- contacto -->
             <div class="footer-contact">
 
-                <h2>
-                    Contacto
-                </h2>
+                <h2>Contacto</h2>
 
                 <div class="emails">
 
@@ -211,6 +222,7 @@
                     +57 312 5444391
                 </p>
 
+                <!-- redes -->
                 <div class="social-icons">
 
                     <a href="#">
@@ -218,7 +230,8 @@
                     </a>
 
                     <a href="#">
-                        <i class="fab fa-facebook-f"></i></a>
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
 
                     <a href="#">
                         <i class="fab fa-instagram"></i>
@@ -230,6 +243,7 @@
 
         </div>
 
+        <!-- footer bottom -->
         <div class="footer-bottom">
 
             <p>
@@ -240,9 +254,8 @@
 
     </footer>
 
-    <!-- iconos -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- js -->
+    <script src="../scripts/dosificacion.js"></script>
 
 </body>
 
