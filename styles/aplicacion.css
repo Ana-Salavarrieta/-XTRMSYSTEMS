@@ -10,6 +10,8 @@
 
 }
 
+
+
 /* generales */
 
 * {
@@ -19,6 +21,8 @@
     box-sizing: border-box;
 
 }
+
+
 
 html,
 body {
@@ -70,6 +74,8 @@ nav {
 
 }
 
+
+
 /* logo */
 
 .logo img {
@@ -78,6 +84,8 @@ nav {
     width: auto;
 
 }
+
+
 
 /* links */
 
@@ -91,7 +99,9 @@ nav {
 
 }
 
-/* links a */
+
+
+/* links */
 
 .nav-links a {
 
@@ -105,6 +115,8 @@ nav {
 
 }
 
+
+
 /* hover */
 
 .nav-links a:hover {
@@ -113,59 +125,77 @@ nav {
 
 }
 
+
+
 /* fin nav */
 
 
 
 
-/* inicio seccion carruseles */
 
-.seccion-carruseles {
+
+
+/* panel */
+
+.panel {
 
     width: 100%;
-    min-height: 100vh;
 
-    display: flex;
+    height: 500vh;
 
-    justify-content: space-between;
-
-    align-items: center;
-
-    padding: 140px 5% 80px;
+    position: relative;
 
     overflow: hidden;
 
 }
 
-/* carrusel general */
+
+
+/* panel izquierda */
+
+.panel-izquierda {
+
+    background-color: black;
+
+}
+
+
+
+/* panel derecha */
+
+.panel-derecha {
+
+    background-color: black;
+
+}
+
+
+
+/* carrusel sticky */
 
 .carrusel {
 
-    width: 50%;
+    width: 100%;
 
-    position: relative;
+    height: 100vh;
+
+    position: sticky;
+
+    top: 0;
 
     display: flex;
 
-    align-items: center;
-
-}
-
-/* carrusel izquierda */
-
-.carrusel-izquierda {
-
     justify-content: flex-start;
 
-}
+    align-items: center;
 
-/* carrusel derecha */
+    overflow: hidden;
 
-.carrusel-derecha {
-
-    justify-content: flex-end;
+    padding-left: 10%;
 
 }
+
+
 
 /* contenedor */
 
@@ -173,10 +203,17 @@ nav {
 
     position: relative;
 
-    width: 500px;
-    height: 500px;
+    width: 320px;
+
+    height: 2200px;
+
+    margin-top: 120vh;
+
+    transition: transform 0.1s linear;
 
 }
+
+
 
 /* imagenes */
 
@@ -184,130 +221,77 @@ nav {
 
     position: absolute;
 
-    width: 220px;
-    height: 220px;
+    width: 260px;
+    height: 260px;
 
     object-fit: contain;
 
-    top: 50%;
-    left: 50%;
+    left: 0;
 
-    margin: -110px;
-
-    transition: var(--transition);
+    transition:
+    transform 0.4s ease,
+    opacity 0.4s ease,
+    filter 0.4s ease;
 
 }
 
-/* hover imagen */
+
+
+/* hover */
 
 .carrusel-container img:hover {
 
-    transform: scale(1.05);
+    transform: scale(1.03);
+
+    filter: drop-shadow(
+        0px 0px 20px rgba(255,255,255,0.4)
+    );
 
 }
+
+
 
 /* imagen 1 */
 
 .carrusel-container img:nth-child(1) {
 
-    transform:
-        rotate(0deg)
-        translate(220px)
-        rotate(0deg);
+    top: 0;
 
 }
+
+
 
 /* imagen 2 */
 
 .carrusel-container img:nth-child(2) {
 
-    transform:
-        rotate(90deg)
-        translate(220px)
-        rotate(-90deg);
+    top: 500px;
 
 }
+
+
 
 /* imagen 3 */
 
 .carrusel-container img:nth-child(3) {
 
-    transform:
-        rotate(180deg)
-        translate(220px)
-        rotate(-180deg);
+    top: 1000px;
 
 }
+
+
 
 /* imagen 4 */
 
 .carrusel-container img:nth-child(4) {
 
-    transform:
-        rotate(270deg)
-        translate(220px)
-        rotate(-270deg);
+    top: 1500px;
 
 }
 
-/* animacion izquierda */
-
-.carrusel-izquierda .carrusel-container {
-
-    animation: girarIzquierda 12s linear infinite;
-
-}
-
-/* animacion derecha */
-
-.carrusel-derecha .carrusel-container {
-
-    animation: girarDerecha 12s linear infinite;
-
-}
-
-/* keyframe izquierda */
-
-@keyframes girarIzquierda {
-
-    from {
-
-        transform: rotate(0deg);
-
-    }
-
-    to {
-
-        transform: rotate(360deg);
-
-    }
-
-}
-
-/* keyframe derecha */
-
-@keyframes girarDerecha {
-
-    from {
-
-        transform: rotate(360deg);
-
-    }
-
-    to {
-
-        transform: rotate(0deg);
-
-    }
-
-}
-
-/* fin seccion carruseles */
 
 
-
-
-/* inicio footer */
+/* footer */
 
 .main-footer {
 
@@ -319,7 +303,9 @@ nav {
 
 }
 
-/* contenedor */
+
+
+/* contenedor footer */
 
 .footer-container {
 
@@ -339,6 +325,8 @@ nav {
 
 }
 
+
+
 /* logo footer */
 
 .footer-logo img {
@@ -346,6 +334,8 @@ nav {
     width: 350px;
 
 }
+
+
 
 /* titulo */
 
@@ -359,7 +349,9 @@ nav {
 
 }
 
-/* correos */
+
+
+/* links footer */
 
 .footer-contact a {
 
@@ -375,13 +367,17 @@ nav {
 
 }
 
-/* hover */
+
+
+/* hover footer */
 
 .footer-contact a:hover {
 
     color: var(--secondary-yellow);
 
 }
+
+
 
 /* telefono */
 
@@ -390,6 +386,8 @@ nav {
     margin-top: 20px;
 
 }
+
+
 
 /* iconos */
 
@@ -403,6 +401,8 @@ nav {
 
 }
 
+
+
 /* links iconos */
 
 .social-icons a {
@@ -415,6 +415,8 @@ nav {
 
 }
 
+
+
 /* hover iconos */
 
 .social-icons a:hover {
@@ -424,6 +426,8 @@ nav {
     color: var(--primary-green);
 
 }
+
+
 
 /* copyright */
 
@@ -435,7 +439,9 @@ nav {
 
 }
 
-/* texto copyright */
+
+
+/* texto */
 
 .footer-bottom p {
 
@@ -449,14 +455,13 @@ nav {
 
 }
 
-/* fin footer */
-
-
 
 
 /* responsive */
 
 @media (max-width: 768px) {
+
+
 
     /* nav */
 
@@ -466,6 +471,8 @@ nav {
 
     }
 
+
+
     /* links */
 
     .nav-links {
@@ -474,93 +481,92 @@ nav {
 
     }
 
-    /* seccion */
 
-    .seccion-carruseles {
 
-        flex-direction: column;
+    /* panel */
 
-        justify-content: center;
+    .panel {
 
-        gap: 120px;
-
-        padding-top: 180px;
+        height: 350vh;
 
     }
+
+
 
     /* carrusel */
 
     .carrusel {
 
-        width: 100%;
-
-        justify-content: center;
+        padding-left: 5%;
 
     }
+
+
 
     /* contenedor */
 
     .carrusel-container {
 
-        width: 320px;
-        height: 320px;
+        width: 180px;
+
+        height: 1500px;
+
+        margin-top: 100vh;
 
     }
+
+
 
     /* imagenes */
 
     .carrusel-container img {
 
-        width: 120px;
-        height: 120px;
-
-        margin: -60px;
+        width: 160px;
+        height: 160px;
 
     }
+
+
 
     /* imagen 1 */
 
     .carrusel-container img:nth-child(1) {
 
-        transform:
-            rotate(0deg)
-            translate(140px)
-            rotate(0deg);
+        top: 0;
 
     }
+
+
 
     /* imagen 2 */
 
     .carrusel-container img:nth-child(2) {
 
-        transform:
-            rotate(90deg)
-            translate(140px)
-            rotate(-90deg);
+        top: 320px;
 
     }
+
+
 
     /* imagen 3 */
 
     .carrusel-container img:nth-child(3) {
 
-        transform:
-            rotate(180deg)
-            translate(140px)
-            rotate(-180deg);
+        top: 640px;
 
     }
+
+
 
     /* imagen 4 */
 
     .carrusel-container img:nth-child(4) {
 
-        transform:
-            rotate(270deg)
-            translate(140px)
-            rotate(-270deg);
+        top: 960px;
 
     }
+
+
 
     /* footer */
 
@@ -574,6 +580,8 @@ nav {
 
     }
 
+
+
     /* logo footer */
 
     .footer-logo img {
@@ -583,6 +591,8 @@ nav {
         max-width: 280px;
 
     }
+
+
 
     /* iconos */
 

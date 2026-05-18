@@ -1,38 +1,25 @@
+// contenedores
+const carruselIzquierda = document.getElementById("carruselIzquierda");
+const carruselDerecha = document.getElementById("carruselDerecha");
 
-/* inicio js */
 
-console.log("carruseles listos");
 
-/* carruseles */
-const carruseles = document.querySelectorAll(".carrusel-container");
-
-/* pausar animacion cuando paso el mouse */
-carruseles.forEach((carrusel) => {
-
-    carrusel.addEventListener("mouseenter", () => {
-        carrusel.style.animationPlayState = "paused";
-    });
-
-    /* reanudar animacion cuando saco el mouse */
-    carrusel.addEventListener("mouseleave", () => {
-        carrusel.style.animationPlayState = "running";
-    });
-
-});
-
-/* efecto con scroll */
+// movimiento scroll
 window.addEventListener("scroll", () => {
 
-    let scroll = window.scrollY;
+    // posicion scroll
+    const scroll = window.scrollY;
 
-    carruseles.forEach((carrusel, index) => {
 
-        let speed = 0.001 + index * 0.0005;
 
-        carrusel.style.transform = `rotate(${scroll * speed}deg)`;
+    // izquierda sube
+    carruselIzquierda.style.transform =
+        `translateY(-${scroll * 0.8}px)`;
 
-    });
+
+
+    // derecha baja
+    carruselDerecha.style.transform =
+        `translateY(${scroll * 0.8}px)`;
 
 });
-
-/* fin js */
