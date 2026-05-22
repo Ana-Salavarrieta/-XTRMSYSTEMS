@@ -20,15 +20,11 @@ cards.forEach((card, index) => {
 
     card.addEventListener("click", () => {
 
-        // mostrar overlay //
-
         overlay.classList.add("active");
-
-        // bloquear scroll //
 
         document.body.style.overflow = "hidden";
 
-        // ocultar todos los contenedores //
+        // ocultar todos //
 
         contenedores.forEach(container => {
 
@@ -36,13 +32,9 @@ cards.forEach((card, index) => {
 
         });
 
-        // mostrar el correspondiente //
+        // mostrar correspondiente //
 
-        if (contenedores[index]) {
-
-            contenedores[index].classList.add("active");
-
-        }
+        contenedores[index].classList.add("active");
 
     });
 
@@ -58,7 +50,7 @@ botonesCerrar.forEach(btn => {
 
 });
 
-// cerrar haciendo click fuera //
+// cerrar fuera //
 
 overlay.addEventListener("click", (e) => {
 
@@ -70,7 +62,7 @@ overlay.addEventListener("click", (e) => {
 
 });
 
-// cerrar con esc //
+// cerrar esc //
 
 document.addEventListener("keydown", (e) => {
 
@@ -97,3 +89,83 @@ function cerrarModal() {
     });
 
 }
+
+// contador //
+
+const contadores = document.querySelectorAll(".contador");
+
+contadores.forEach(contador => {
+
+    const btnMenos = contador.querySelector(".menos");
+
+    const btnMas = contador.querySelector(".mas");
+
+    const cantidad = contador.querySelector(".cantidad");
+
+    let numero = 1;
+
+    // sumar //
+
+    btnMas.addEventListener("click", () => {
+
+        numero++;
+
+        cantidad.textContent = numero;
+
+    });
+
+    // restar //
+
+    btnMenos.addEventListener("click", () => {
+
+        if (numero > 1) {
+
+            numero--;
+
+            cantidad.textContent = numero;
+
+        }
+
+    });
+
+});
+
+// estrellas //
+
+const productos = document.querySelectorAll(".producto-card");
+
+productos.forEach(producto => {
+
+    const estrellaVacia = producto.querySelector(".estrella-forma");
+
+    const estrellaLlena = producto.querySelector(".estrella-rellena");
+
+    // iniciar //
+
+    estrellaLlena.style.display = "none";
+
+    // seleccionar //
+
+    estrellaVacia.addEventListener("click", (e) => {
+
+        e.stopPropagation();
+
+        estrellaVacia.style.display = "none";
+
+        estrellaLlena.style.display = "block";
+
+    });
+
+    // quitar seleccion //
+
+    estrellaLlena.addEventListener("click", (e) => {
+
+        e.stopPropagation();
+
+        estrellaLlena.style.display = "none";
+
+        estrellaVacia.style.display = "block";
+
+    });
+
+});
