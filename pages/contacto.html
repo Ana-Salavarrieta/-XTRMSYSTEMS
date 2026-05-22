@@ -2,184 +2,122 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Contacto</title>
-
     <!-- css -->
     <link rel="stylesheet" href="../styles/contacto.css">
-    <link rel="script" href="../scripts/contacto.js">
-
 </head>
 
 <body>
 
     <!-- nav -->
     <nav>
-
         <div class="logo">
             <img src="../multimedia/Logo Version 01.png" alt="XTRM SYSTEMS" style="height: 40px;">
         </div>
-
         <ul class="nav-links">
             <li><a href="../pages/index.html">Home</a></li>
             <li><a href="../pages/productos.html">Antipinchazos</a></li>
             <li><a href="../pages/doscificacion.html">Dosificación</a></li>
             <li><a href="../pages/contacto.html">Contacto</a></li>
         </ul>
-
         <div class="hamburger">
             <span></span>
             <span></span>
             <span></span>
         </div>
-
     </nav>
 
     <!-- canvas -->
     <canvas></canvas>
 
     <section class="contacto">
+        <div class="contacto-header">
+            <h1>Queremos conocerte un poco mejor</h1>
+            <p>
+                Por favor, déjanos tus datos de contacto para que podamos hablar contigo personalmente.
+            </p>
+        </div>
 
-    <div class="contacto-header">
-        <h1>Queremos conocerte un poco mejor</h1>
+        <!-- Agregamos un ID al formulario para controlarlo con JS -->
+        <form class="formulario" id="contactForm">
 
-        <p>
-            Por favor, déjanos tus datos de contacto para que
-            podamos hablar contigo personalmente.
-        </p>
-    </div>
+            <!-- fila 1 -->
+            <div class="fila">
+                <div class="campo">
+                    <label for="nombre">Nombres*</label>
+                    <input type="text" id="nombre" placeholder="Pon tu nombre aquí" required minlength="2">
+                </div>
 
-    <form class="formulario">
-
-        <!-- fila 1 -->
-        <div class="fila">
-
-            <div class="campo">
-                <label>Nombres*</label>
-                <input type="text" placeholder="Pon tu nombre aquí">
+                <div class="campo">
+                    <label for="apellido">Apellidos*</label>
+                    <input type="text" id="apellido" placeholder="Pon tus apellidos aquí" required minlength="3">
+                </div>
             </div>
 
+            <!-- telefono -->
             <div class="campo">
-                <label>Apellidos*</label>
-                <input type="text" placeholder="Pon tus apellidos aquí">
+                <label for="phone">Número de teléfono*</label>
+                <div class="telefono-input">
+                    <select id="country" required></select>
+                    <!-- Agregamos pattern para obligar a que sean solo números -->
+                    <input type="tel" id="phone" placeholder="Pon tu número de teléfono aquí" required pattern="[0-9]+">
+                </div>
             </div>
 
-        </div>
+            <!-- correo -->
+            <div class="campo">
+                <label for="email">Correo electrónico*</label>
+                <!-- El tipo "email" ya exige la estructura básica con @ -->
+                <input type="email" id="email" placeholder="Pon tu correo electrónico aquí" required>
+            </div>
 
-        <!-- telefono -->
-        <div class="campo">
-          <label>Número de teléfono*</label>
+            <!-- mensaje -->
+            <div class="campo">
+                <label for="mensaje">
+                    Agregue un mensaje e indíquenos más detalles sobre lo que necesita o desea saber de nuestros productos (tipo de llanta o de vehículo).*
+                </label>
+                <textarea id="mensaje" placeholder="Pon tu mensaje aquí" required></textarea>
+            </div>
 
-           <div class="telefono-input">
-
-               <select id="country"></select>
-  
-               <input 
-                 type="tel" 
-                 id="phone" 
-                   placeholder="Pon tu número de teléfono aquí">
-
-  </div>
-</div>
-
-        <!-- correo -->
-        <div class="campo">
-            <label>Correo electrónico*</label>
-            <input type="email" placeholder="Pon tu correo electrónico aquí">
-        </div>
-
-        <!-- mensaje -->
-        <div class="campo">
-            <label>
-                Agregue un mensaje e indíquenos más detalles sobre lo
-                que necesita o desea saber de nuestros productos
-                (tipo de llanta o de vehículo).*
-            </label>
-
-            <textarea placeholder="Pon tu mensaje aquí"></textarea>
-        </div>
-
-        <!-- boton -->
-        <div class="boton-container">
-            <button type="submit">Enviar</button>
-        </div>
-
-    </form>
-
-</section>
-
-   
+            <!-- boton -->
+            <div class="boton-container">
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+    </section>
 
     <!-- footer -->
     <footer class="main-footer">
-
         <div class="footer-container">
-
             <div class="footer-logo">
-
                 <img src="../multimedia/Logo Version 01.png" alt="XTRM SYSTEMS">
-
             </div>
-
             <div class="footer-contact">
-
-                <h2>
-                    Contacto
-                </h2>
-
+                <h2>Contacto</h2>
                 <div class="emails">
-
-                    <a href="mailto:amoreno@xtrmsystems.com.co">
-                        amoreno@xtrmsystems.com.co
-                    </a>
-
-                    <a href="mailto:rvanegas@xtrmsystems.com.co">
-                        rvanegas@xtrmsystems.com.co
-                    </a>
-
+                    <a href="mailto:amoreno@xtrmsystems.com.co">amoreno@xtrmsystems.com.co</a>
+                    <a href="mailto:rvanegas@xtrmsystems.com.co">rvanegas@xtrmsystems.com.co</a>
                 </div>
-
-                <p class="phone">
-                    +57 312 5444391
-                </p>
-
+                <p class="phone">+57 312 5444391</p>
                 <div class="social-icons">
-
-                    <a href="#">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-
-                    <a href="#">
-                        <i class="fab fa-facebook-f"></i></a>
-
-                    <a href="#">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
                 </div>
-
             </div>
-
         </div>
-
         <div class="footer-bottom">
-
-            <p>
-                &copy; 2026 por XTRM SYSTEMS
-            </p>
-
+            <p>&copy; 2026 por XTRM SYSTEMS</p>
         </div>
-
     </footer>
 
     <!-- iconos -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-
+    <!-- JS correctamente enlazado al final -->
+    <script src="../scripts/contacto.js"></script>
 </body>
 
 </html>
