@@ -15,147 +15,329 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 </head>
+
 <body>
-    <!-- nav -->
+      <!-- nav -->
     <nav>
+    <div class="logo">
+        <img src="../multimedia/Logo Version 01.png" alt="XTRM SYSTEMS">
+    </div>
+    <ul class="nav-links">
+        <li><a href="../pages/index.html">Home</a></li>
+        <li><a href="../pages/productos.html">Antipinchazos</a></li>
+        <li><a href="../pages/doscificacion.html">Dosificación</a></li>
+        <li><a href="../pages/contacto.html">Contacto</a></li>
+    </ul>
+</nav>
+<!-- hero -->
+     <section class="hero-dosificacion"> <h1> DOSIFICACIÓN XTRM T3</h1>
+    </section>
 
-        <div class="logo">
-            <img src="../multimedia/Logo Version 01.png" alt="XTRM SYSTEMS" style="height: 40px;">
+<div class="categorias">
+    <button class="categoria-btn" data-tipo="patineta">Patinetas</button>
+    <button class="categoria-btn active" data-tipo="moto">Motos</button>
+    <button class="categoria-btn" data-tipo="bicicleta">Bicicletas</button>
+    
+    <div class="camion-container">
+        <button class="categoria-btn" id="botonMenu" data-tipo="camion">
+            Camiones <i class="fas fa-chevron-down" style="font-size:0.8rem; margin-left:5px;"></i>
+        </button>
+        <div id="misOpciones" class="opciones-contenido">
+            <div class="producto" data-categoria="Camiones pesados">Vehículos pesados</div>
+            <div class="producto" data-categoria="BTP/Obras">BTP/Obras</div>
+            <div class="producto" data-categoria="Remolques">Remolques</div>
+            <div class="producto" data-categoria="Agrícola">Agrícola</div>
         </div>
-
-        <ul class="nav-links">
-            <li><a href="../pages/index.html">Home</a></li>
-            <li><a href="../pages/productos.html">Antipinchazos</a></li>
-            <li><a href="../pages/doscificacion.html">Dosificación</a></li>
-            <li><a href="../pages/contacto.html">Contacto</a></li>
-        </ul>
-
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-
-    </nav>
-
-    <!-- canvas -->
-    <canvas></canvas>
-
-    <!-- calculadora -->
-    <section class="calculadora">
-
-        <!-- titulo -->
-        <div class="calculadora-titulo">
-
-            <h2>Dosificación XTRM T3</h2>
-
-        </div>
-
-        <!-- categorias -->
-        <div class="categorias">
-
-            <button class="categoria-btn" data-tipo="patineta">
-                Patinetas
-            </button>
-
-            <button class="categoria-btn active" data-tipo="moto">
-                Motos
-            </button>
-
-            <button class="categoria-btn" data-tipo="bicicleta">
-                Bicicletas
-            </button>
-
-        </div>
-
-        <!-- contenido -->
+    </div>
+</div>
+        <!-- contenedor principal -->
         <div class="calculadora-container">
 
-            <!-- imagen -->
-            <div class="calculadora-imagen">
+            <!-- lado izquierdo -->
+            <div class="lado-izquierdo">
 
-                <img id="imagen-producto"
-                src="../multimedia/Llanta moto.png"
-                alt="llanta">
+                <!-- imagen -->
+                <div class="calculadora-imagen">
 
-            </div>
-
-            <!-- panel -->
-            <div class="calculadora-panel">
-
-                <h3 id="titulo-producto">
-                    Moto
-                </h3>
-
-                <!-- tipo -->
-                <div class="form-group">
-
-                    <label>Tipo de neumático</label>
-
-                    <select>
-
-                        <option>Tubeless (TL) </option>
-
-                        <option>Con mangera (TT) </option>
-
-                    </select>
+                    <img id="imagen-producto"
+                    src="../multimedia/Llanta moto.png"
+                    alt="llanta">
 
                 </div>
 
-                <!-- slider -->
-                <div class="form-group">
+                <!-- boton aplicacion -->
+                <a href="../pages/aplicacion.html"
+                class="btn-aplicacion-link">
 
-                    <label>
-                        Ancho del neumático (mm)
-                    </label>
+                    <button class="btn-aplicacion">
 
-                    <div class="slider-container">
+                        Aplicación
 
-                        <input id="slider"
-                        type="range"
-                        min="10"
-                        max="100"
-                        value="45">
+                    </button>
 
-                        <div class="valor-slider" id="valor-slider">
-                            45
+                </a>
+
+            </div>
+
+            <!-- lado derecho -->
+            <div class="calculadora-panel">
+
+                <!-- panel normal -->
+                <div id="panel-normal">
+
+                    <h3 id="titulo-producto"> Moto</h3>
+
+                    <!-- tipo -->
+                    <div class="form-group">
+
+                        <label> Tipo de neumático </label>
+
+                        <select>
+
+                            <option> Tubeless (TL) </option>
+
+                            <option>Con mangera (TT)</option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- slider -->
+                    <div class="form-group">
+
+                        <label>  Ancho del neumático (mm)</label>
+
+                        <div class="slider-container">
+
+                            <input id="slider"
+                            type="range"
+                            min="10"
+                            max="100"
+                            value="45">
+
+                            <div class="valor-slider"
+                            id="valor-slider">
+
+                                45
+
+                            </div>
+
                         </div>
+
+                    </div>
+
+                    <!-- rueda -->
+                    <div class="form-group">
+
+                        <label>
+
+                            Tamaño del Rin (pulgadas)
+
+                        </label>
+
+                        <select id="rueda-select">
+
+                            <option>
+                                29"
+                            </option>
+
+                            <option>
+                                27.5"
+                            </option>
+
+                            <option>
+                                26"
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- botones -->
+                    <div class="botones-panel">
+
+                        <button class="btn-yellow">
+
+                            Calcular dosificación
+
+                        </button>
 
                     </div>
 
                 </div>
 
-                <!-- rueda -->
-                <div class="form-group">
+                <!-- panel camion -->
+                <div class="panel-camion"
+                id="panel-camion">
 
-                    <label>Tamaño del Rin (pulgadas)</label>
+                    <!-- titulo -->
+                    <h3>
 
-                    <select id="rueda-select">
+                        Vehículos pesados
 
-                        <option>29"</option>
+                    </h3>
 
-                        <option>27.5"</option>
+                    <!-- dimension -->
+                    <div class="form-group">
 
-                        <option>26"</option>
+                        <label>
 
-                    </select>
+                            Selecciona Dimension de la llanta
 
-                </div>
+                        </label>
 
-                <!-- botones -->
-                <div class="botones-panel">
+                        <select id="rueda-select-camion">
 
-                    <button class="btn-yellow">
-                        Calcular dosificación
-                    </button>
+                            <option>
 
-                    <a href="../pages/aplicacion.html">
+                                Elegir dimensión
 
-                        <button class="btn-yellow">
-                            Modo de aplicación
-                        </button>
+                            </option>
 
-                    </a>
+                        </select>
+
+                    </div>
+
+                    <!-- ancho -->
+                    <div class="form-group">
+
+                        <label>
+
+                            Ancho de neumático
+
+                        </label>
+
+                        <select>
+
+                            <option>
+
+                                Tubeless (TL)
+
+                            </option>
+
+                            <option>
+
+                                Con Mangera (TT)
+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- tipo uso -->
+                    <div class="form-group">
+
+                        <label>
+
+                            Tipo de uso
+
+                        </label>
+
+                        <div class="uso-btns">
+
+                            <button class="uso-btn">
+
+                                En carretera
+
+                            </button>
+
+                            <button class="uso-btn">
+
+                                Todo terreno
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- tarjeta -->
+                    <div class="tarjeta-info">
+
+                        <!-- cantidad -->
+                        <div class="cantidad-producto">
+
+                            <h2 id="resultado-kg">
+
+                                12.3 kg
+
+                            </h2>
+
+                            <p>
+
+                                ≈ 12300 G
+                                &nbsp;&nbsp;
+
+                                ≈ 12.3 L
+                                &nbsp;&nbsp;
+
+                                ≈ 433.9 OZ
+
+                            </p>
+
+                        </div>
+
+                        <!-- linea -->
+                        <div class="linea"></div>
+
+                        <!-- recomendados -->
+                        <div class="productos-recomendados">
+
+                            <h4>
+
+                                PRODUCTOS RECOMENDADOS
+
+                            </h4>
+
+                            <!-- cards -->
+                            <div class="cards-productos">
+
+                                <!-- card -->
+                                <div class="card-producto">
+
+                                    <span class="etiqueta">
+
+                                        XTRM T6
+
+                                    </span>
+
+                                    <h5>
+
+                                        Inyección por desmontaje de la llanta
+
+                                    </h5>
+
+                                    <p>
+
+                                        Sellante tubeless profesional para uso off-road.
+                                        Formula equilibrada para vehículos industriales.
+
+                                    </p>
+
+                                </div>
+
+                                <!-- card -->
+                                <div class="card-producto">
+
+                                    <span class="etiqueta">
+                                        XTRM T6 SUPER STRONG
+                                    </span>
+
+                                    <h5>
+                                        Inyección por desmontaje de la llanta
+                                    </h5>
+
+                                    <p>Fórmula reforzada para condiciones extremas.
+                                        Sella perforaciones de hasta 12 mm.</p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
@@ -170,19 +352,21 @@
 
         <div class="resultado-container">
 
-            <h2>Resultado estimado</h2>
+            <h2>
+
+                Resultado estimado
+
+            </h2>
 
             <p>
 
                 Tu llanta necesita aproximadamente
 
                 <span id="resultado-ml">
+
                     450 ml
-                </span>
 
-                de producto.
-
-            </p>
+                </span> de producto.</p>
 
         </div>
 
@@ -204,38 +388,26 @@
             <!-- contacto -->
             <div class="footer-contact">
 
-                <h2>Contacto</h2>
+                <h2>Contacto </h2>
 
                 <div class="emails">
 
-                    <a href="mailto:amoreno@xtrmsystems.com.co">
-                        amoreno@xtrmsystems.com.co
-                    </a>
+                    <a href="mailto:amoreno@xtrmsystems.com.co"> amoreno@xtrmsystems.com.co </a>
 
-                    <a href="mailto:rvanegas@xtrmsystems.com.co">
-                        rvanegas@xtrmsystems.com.co
-                    </a>
+                    <a href="mailto:rvanegas@xtrmsystems.com.co"> rvanegas@xtrmsystems.com.co </a>
 
                 </div>
 
-                <p class="phone">
-                    +57 312 5444391
-                </p>
+                <p class="phone"> +57 312 5444391</p>
 
                 <!-- redes -->
                 <div class="social-icons">
 
-                    <a href="#">
-                        <i class="fab fa-youtube"></i>
-                    </a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
 
-                    <a href="#">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
 
-                    <a href="#">
-                        <i class="fab fa-instagram"></i>
-                    </a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
 
                 </div>
 
@@ -246,9 +418,7 @@
         <!-- footer bottom -->
         <div class="footer-bottom">
 
-            <p>
-                &copy; 2026 por XTRM SYSTEMS
-            </p>
+            <p>&copy; 2026 por XTRM SYSTEMS</p>
 
         </div>
 
