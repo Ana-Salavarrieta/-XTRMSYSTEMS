@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="../styles/pago.css">
+</head>
+
+<body>
+
+    <!-- nav -->
+    <nav>
+        <div class="logo">
+            <img src="../multimedia/Logo Version 01.png" alt="XTRM SYSTEMS" style="height: 40px;">
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../pages/productos.html">Antipinchazos</a></li>
+            <li><a href="../pages/simulador.html">Dosificación</a></li>
+            <li><a href="../pages/procesoAplicacion.html">Aplicación</a></li>
+            <li><a href="../pages/contacto.html">Contacto</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    
+        <div class="datos-header">
+            <h1>Reaplizar pago</h1>
+            <p>
+                Llenar esta información solo te tomará unos minutos
+            </p>
+        </div>
+
+    <section class="datos">
+
+        <!-- formulario de contacto -->
+        <form class="formulario" id="contactForm">
+
+
+            
+            <!-- Contacto --> 
+            <h2>Contacto</h2>
+            
+            <!-- correo -->
+            <div class="campo">
+                <label for="email">Correo electrónico*</label>
+                <!-- El tipo "email" ya exige la estructura básica con @ -->
+                <input type="email" id="email" placeholder="Pon tu correo electrónico aquí" required>
+            </div>
+
+            <!-- telefono -->
+            <div class="campo">
+                <label for="phone">Número de teléfono*</label>
+                <div class="telefono-input">
+                    <select id="country" required></select>
+                    <!-- Agregamos pattern para obligar a que sean solo números -->
+                    <input type="tel" id="phone" placeholder="Pon tu número de teléfono aquí" required pattern="[0-9]+">
+                </div>
+            </div>
+            
+
+            <!-- Datos de facturacion --> 
+            <h2>Datos de facturación</h2>
+
+            <!-- fila 1 --> 
+            <div class="fila">
+                <div class="campo">
+                    <label for="nombre">Nombres*</label>
+                    <input type="text" id="nombre" placeholder="Pon tu nombre aquí" required minlength="2">
+                </div>
+
+                <div class="campo">
+                    <label for="apellido">Apellidos*</label>
+                    <input type="text" id="apellido" placeholder="Pon tus apellidos aquí" required minlength="3">
+                </div>
+            </div>
+
+             <!-- tipo de identificación -->
+            <div class="campo">
+                <label for="t-identificacion">Tipo de identificación*</label>
+                <select id="t-identificacion" required>
+                    <option value="cc">Cédula de ciudadania</option>
+                    <option value="ce">Cédula de extranjeria</option>
+                </select>
+            </div>
+
+            <!-- identificación -->
+            <div class="campo">
+                <label for="n-identificacion">Número de identificación*</label>
+                <!-- Agregamos pattern para obligar a que sean solo números -->
+                <input type="text" id="n-identificacion" placeholder="Pon tu número de identificación aquí" required pattern="[0-9]+">
+            </div>
+
+
+
+            <!-- Medio de Pago --> 
+            <h2>Medio de Pago</h2>
+
+            <!-- Nequi -->
+            <div class="medio-pago">
+                <label for="nequi">
+                    <input type="radio" id="nequi" name="medio-pago" value="nequi">
+                    <p><img src="../multimedia/nequi.png" alt="nequi">Nequi</p>
+                </label>
+            </div>
+
+            <!-- PSE -->
+            <div class="medio-pago">
+                <label for="pse">
+                    <input type="radio" id="pse" name="medio-pago" value="pse">
+                    <p><img src="../multimedia/pse.png" alt="pse">PSE</p>
+                </label>
+            </div>
+
+            <!-- Domicilio --> 
+            <h2>Domicilio</h2>
+
+            <div class="campo">
+                <label for="direccion">Dirección*</label>
+                <input type="text" id="direccion" placeholder="Pon tu dirección aquí" required minlength="3">
+            </div>
+
+            <!-- boton -->
+            <div class="boton-container">
+                <button type="submit">Pagar</button>
+            </div>
+        </form>
+
+
+
+        <!-- resumen -->
+        <article class="resumen" id="resumen">
+            <div class="calculos">
+                <p>Total Productos</p> 
+                <span>$10000</span>
+            </div>
+            <div class="calculos">
+                <p>Domicilio</p> 
+                <span>$10000</span>
+            </div>
+            <div class="calculos" id="total">
+                <p>Total a Pagar</p> 
+                <span>$10000</span>
+            </div>
+        </article>
+
+        <!-- boton para mostrar -->
+         <div class="boton-mostrar" id="mostrar">
+            <p>Ver resumen </p>
+         </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="../multimedia/Logo Version 01.png" alt="XTRM SYSTEMS">
+            </div>
+            <div class="footer-contact">
+                <h2>Contacto</h2>
+                <div class="emails">
+                    <a href="mailto:amoreno@xtrmsystems.com.co">amoreno@xtrmsystems.com.co</a>
+                    <a href="mailto:rvanegas@xtrmsystems.com.co">rvanegas@xtrmsystems.com.co</a>
+                </div>
+                <p class="phone">+57 312 5444391</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 por XTRM SYSTEMS</p>
+        </div>
+    </footer>
+
+    <!-- iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../scripts/pago.js"></script>
+</body>
+
+</html>

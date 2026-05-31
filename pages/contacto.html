@@ -5,13 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto</title>
-    <!-- css -->
     <link rel="stylesheet" href="../styles/contacto.css">
 </head>
 
 <body>
 
-    <!-- nav -->
     <nav>
         <div class="logo">
             <img src="../multimedia/Logo Version 01.png" alt="XTRM SYSTEMS" style="height: 40px;">
@@ -29,9 +27,8 @@
         </div>
     </nav>
 
-    <!-- canvas -->
     <canvas></canvas>
-
+    
     <section class="contacto">
         <div class="contacto-header">
             <h1>Queremos conocerte un poco mejor</h1>
@@ -40,82 +37,86 @@
             </p>
         </div>
 
-        <!-- formulario de contacto -->
         <form class="formulario" id="contactForm">
 
-            <!-- fila 1 -->
             <div class="fila">
                 <div class="campo">
-                    <label for="nombre">Nombres*</label>
-                    <input type="text" id="nombre" placeholder="Pon tu nombre aquí" required minlength="2">
+                    <label for="nombre">Nombre y Apellido</label>
+                    <input type="text" id="nombre" placeholder="Escribe tu nombre y apellido" required minlength="2">
                 </div>
-
-                <div class="campo">
-                    <label for="apellido">Apellidos*</label>
-                    <input type="text" id="apellido" placeholder="Pon tus apellidos aquí" required minlength="3">
-                </div>
-            </div>
-
-            <!-- telefono -->
-            <div class="campo">
-                <label for="phone">Número de teléfono*</label>
+            </div> <div class="campo">
+                <label for="phone">Número de teléfono</label>
                 <div class="telefono-input">
                     <select id="country" required></select>
-                    <!-- Agregamos pattern para obligar a que sean solo números -->
-                    <input type="tel" id="phone" placeholder="Pon tu número de teléfono aquí" required pattern="[0-9]+">
+                    <input type="tel" id="phone" placeholder="Deja tu número de teléfono" required pattern="[0-9]+">
                 </div>
             </div>
 
-            <!-- correo -->
             <div class="campo">
-                <label for="email">Correo electrónico*</label>
-                <!-- El tipo "email" ya exige la estructura básica con @ -->
-                <input type="email" id="email" placeholder="Pon tu correo electrónico aquí" required>
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" placeholder="Deja tu correo electrónico" required>
             </div>
 
-            <!-- mensaje -->
             <div class="campo">
-                <label for="mensaje">
-                    Agregue un mensaje e indíquenos más detalles sobre lo que necesita o desea saber de nuestros productos (tipo de llanta o de vehículo).*
-                </label>
-                <textarea id="mensaje" placeholder="Pon tu mensaje aquí" required></textarea>
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" placeholder="escribe tu mensaje..." required></textarea>
             </div>
 
-            <!-- boton -->
             <div class="boton-container">
                 <button type="submit">Enviar</button>
             </div>
-        </form>
-    </section>
 
-    <!-- footer -->
+        </form> </section>
+
     <footer class="main-footer">
+
         <div class="footer-container">
+
             <div class="footer-logo">
                 <img src="../multimedia/Logo Version 01.png" alt="XTRM SYSTEMS">
             </div>
+
             <div class="footer-contact">
+
                 <h2>Contacto</h2>
+
                 <div class="emails">
-                    <a href="mailto:amoreno@xtrmsystems.com.co">amoreno@xtrmsystems.com.co</a>
-                    <a href="mailto:rvanegas@xtrmsystems.com.co">rvanegas@xtrmsystems.com.co</a>
+                    <a href="mailto:amoreno@xtrmsystems.com.co">
+                        amoreno@xtrmsystems.com.co
+                    </a>
+                    <a href="mailto:rvanegas@xtrmsystems.com.co">
+                        rvanegas@xtrmsystems.com.co
+                    </a>
                 </div>
-                <p class="phone">+57 312 5444391</p>
+            
                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/573125444391?text=Hola%20XTRM%20SYSTEMS,%20estoy%20interesado%20en%20sus%20servicios,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos." class="phone" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@xtrmsystems1">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://web.facebook.com/xtrmsystems1?_rdc=1&_rdr">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/xtrmsystems?igsh=dGhjMzl5Z3cwdmZp">
+                        <i class="fab fa-instagram"></i>
+                    </a>
                 </div>
+
             </div>
+
         </div>
+
         <div class="footer-bottom">
             <p>&copy; 2026 por XTRM SYSTEMS</p>
         </div>
+
     </footer>
 
-    <!-- iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="../scripts/contacto.js"></script>
-</body>
 
+    <script src="../scripts/contacto.js"></script>
+
+</body>
 </html>
