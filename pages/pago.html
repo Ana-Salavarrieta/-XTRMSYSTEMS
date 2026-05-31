@@ -33,7 +33,7 @@
     </nav>
     
         <div class="datos-header">
-            <h1>Reaplizar pago</h1>
+            <h1>Realizar pago</h1>
             <p>
                 Llenar esta información solo te tomará unos minutos
             </p>
@@ -87,8 +87,11 @@
             <div class="campo">
                 <label for="t-identificacion">Tipo de identificación*</label>
                 <select id="t-identificacion" required>
-                    <option value="cc">Cédula de ciudadania</option>
-                    <option value="ce">Cédula de extranjeria</option>
+                    <option value="">Seleccione una opción</option>
+                    <option value="cc">Cédula de ciudadanía</option>
+                    <option value="ce">Cédula de extranjería</option>
+                    <option value="ti">Tarjeta de identidad</option>
+                    <option value="nit">NIT</option>
                 </select>
             </div>
 
@@ -134,6 +137,21 @@
             </div>
         </form>
 
+
+        <div id="mensaje-gracias" class="mensaje-gracias">
+
+    <h2>¡Gracias por tu compra!</h2>
+
+    <p>
+        Hemos recibido correctamente tu información.
+        Tu solicitud de pago ha sido registrada exitosamente.
+    </p>
+
+    <p>
+        En breve nos pondremos en contacto contigo para confirmar el proceso.
+    </p>
+
+</div>
 
 
         <!-- resumen -->

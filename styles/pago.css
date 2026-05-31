@@ -159,9 +159,11 @@ nav {
 
 /* inputs generales */
 
-.campo input, .medio-pago p, #t-identificacion {
+.campo input, 
+.medio-pago p, 
+#t-identificacion {
     width: 100%;
-    background: transparent;
+    background-color: #000;
     border: 1px solid #8a8a8a;
     border-radius: 12px;
     color: white;
@@ -262,6 +264,64 @@ nav {
     color: #7a7a7a;
 }
 
+/* mantener fondo negro al seleccionar */
+
+.campo input:focus,
+.telefono-input input:focus,
+.telefono-input select:focus,
+#t-identificacion:focus {
+    background-color: #000 !important;
+    color: #fff !important;
+    outline: none;
+}
+
+/* corregir autocompletado de chrome */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+
+    -webkit-box-shadow: 0 0 0 1000px #000 inset !important;
+    -webkit-text-fill-color: #fff !important;
+
+    border: 1px solid #8a8a8a !important;
+
+    caret-color: #fff !important;
+
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+/* mensajes de error */
+.mensaje-error {
+
+    display: block;
+
+    margin-top: 8px;
+
+    color: #ff4d4d;
+
+    font-size: 14px;
+
+    line-height: 1.4;
+}
+
+/* campo invalido */
+
+.invalid {
+    border: 1px solid #ff4d4d !important;
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+/* campo valido */
+
+.valid {
+    border: 1px solid #00b347 !important;
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
 /* boton */
 
 .boton-container {
@@ -290,6 +350,33 @@ nav {
 
 .boton-container button:hover {
     transform: scale(1.03);
+}
+
+
+/* mensaje de agradecimiento */
+
+.mensaje-gracias {
+    display: none;
+    width: 40%;
+    max-width: 600px;
+    background-color: #0a0a0a;
+    border-radius: 20px;
+    padding: 40px;
+    box-sizing: border-box;
+    text-align: center;
+    border: 1px solid var(--secondary-yellow);
+}
+
+.mensaje-gracias h2 {
+    color: var(--text-main);
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.mensaje-gracias p {
+    color: white;
+    line-height: 1.8;
+    font-size: 18px;
 }
 
 /* resumen */
@@ -323,6 +410,17 @@ nav {
     padding: 12px 20px;
     height: fit-content;
     border-radius: 12px;
+}
+
+.mensaje-error{
+    color:#ff4d4d;
+    font-size:14px;
+    margin-top:6px;
+    display:block;
+}
+
+.invalid{
+    border:1px solid #ff4d4d !important;
 }
 
 /* footer */
