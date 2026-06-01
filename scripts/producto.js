@@ -1,4 +1,4 @@
-// PRODUCTOS
+// producto.js
 
 const cards = document.querySelectorAll(".producto-card");
 
@@ -10,7 +10,7 @@ const contenedores = [
     document.querySelector(".detalle-container-3")
 ];
 
-// ABRIR MODAL
+// abrir modal al hacer click en cada card
 
 cards.forEach((card, index) => {
 
@@ -34,8 +34,7 @@ cards.forEach((card, index) => {
     });
 });
 
-// BOTONES CERRAR
-
+// boton cerrar
 const botonesCerrar = document.querySelectorAll(".cerrar");
 
 botonesCerrar.forEach(btn => {
@@ -43,7 +42,7 @@ botonesCerrar.forEach(btn => {
     btn.addEventListener("click", cerrarModal);
 });
 
-// CERRAR HACIENDO CLICK FUERA
+// Cerrar al hacer click fuera del contenedor
 
 overlay.addEventListener("click", (e) => {
 
@@ -52,7 +51,7 @@ overlay.addEventListener("click", (e) => {
     }
 });
 
-// CERRAR CON ESC
+// Cerrar con Escape
 
 document.addEventListener("keydown", (e) => {
 
@@ -61,7 +60,7 @@ document.addEventListener("keydown", (e) => {
     }
 });
 
-// FUNCIÓN CERRAR
+// Función para cerrar modal
 
 function cerrarModal() {
 
