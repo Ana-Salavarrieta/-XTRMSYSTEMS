@@ -6,181 +6,340 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>dosificacion</title>
+    <title>Dosificación</title>
 
-    <!-- css -->
+    <!-- hoja de estilos -->
     <link rel="stylesheet" href="../styles/dosificacion.css">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 </head>
 
 <body>
-
-    <!-- nav -->
+      <!-- nav -->
     <nav>
-
-        <div class="logo">
-            <img src="../multimedia/Logo Version 01.png" alt="XTRM SYSTEMS" style="height: 40px;">
-        </div>
-
-        <ul class="nav-links">
-            <li><a href="../pages/index.html">Home</a></li>
-            <li><a href="../pages/productos.html">Antipinchazos</a></li>
-            <li><a href="../pages/doscificacion.html">Dosificación</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-
-    </nav>
-
-    <!-- canvas -->
-    <canvas></canvas>
-
-    <!-- hero -->
-    <section class="hero">
-
-        <div class="hero-top">
-
-            <div class="hero-title">
-
-                <h1>
-                    Dosificación inteligente
-                    para cada tipo de llanta
-                </h1>
-
-            </div>
-
-            <div class="hero-description">
-
-                <p>
-                    Calcula la cantidad ideal de producto según
-                    el tamaño de tu llanta y obtén una protección
-                    eficaz y duradera con XTRM SYSTEMS.
-                </p>
-
-            </div>
-
-        </div>
-
+    <div class="logo">
+        <img src="../multimedia/Logo Version 01.png" alt="XTRM SYSTEMS">
+    </div>
+    <ul class="nav-links">
+        <li><a href="../pages/index.html">Home</a></li>
+        <li><a href="../pages/productos.html">Antipinchazos</a></li>
+        <li><a href="../pages/doscificacion.html">Dosificación</a></li>
+        <li><a href="../pages/contacto.html">Contacto</a></li>
+    </ul>
+</nav>
+<!-- hero -->
+     <section class="hero-dosificacion"> <h1> DOSIFICACIÓN XTRM T3</h1>
     </section>
 
-    <!-- calculadora -->
-    <section class="calculadora">
-
-        <!-- titulo -->
-        <div class="calculadora-titulo">
-
-            <h2>
-                DOSIFICACIÓN XTRM T3
-            </h2>
-
+<div class="categorias">
+    <button class="categoria-btn" data-tipo="patineta">Patinetas</button>
+    <button class="categoria-btn active" data-tipo="moto">Motos</button>
+    <button class="categoria-btn" data-tipo="bicicleta">Bicicletas</button>
+    
+    <div class="camion-container">
+        <button class="categoria-btn" id="botonMenu" data-tipo="camion">
+            Camiones <i class="fas fa-chevron-down" style="font-size:0.8rem; margin-left:5px;"></i>
+        </button>
+        <div id="misOpciones" class="opciones-contenido">
+            <div class="producto" data-categoria="Camiones pesados">Vehículos pesados</div>
+            <div class="producto" data-categoria="BTP/Obras">BTP/Obras</div>
+            <div class="producto" data-categoria="Remolques">Remolques</div>
+            <div class="producto" data-categoria="Agrícola">Agrícola</div>
         </div>
-
-        <!-- categorias -->
-        <div class="categorias">
-
-            <button>
-                Patinetas
-            </button>
-
-            <button class="active">
-                Motos
-            </button>
-
-            <button>
-                Bicicletas
-            </button>
-
-        </div>
-
-        <!-- contenido -->
+    </div>
+</div>
+        <!-- contenedor principal -->
         <div class="calculadora-container">
 
-            <!-- imagen -->
-            <div class="llanta">
+            <!-- lado izquierdo -->
+            <div class="lado-izquierdo">
 
-                <img src="../multimedia/Llanta moto.png" alt="llanta" style="height: 400px;">
+                <!-- imagen -->
+                <div class="calculadora-imagen">
 
-            </div>
-
-            <!-- formulario -->
-            <div class="formulario">
-
-                <h3>
-                    Bicicleta
-                </h3>
-
-                <!-- tipo -->
-                <div class="form-group">
-
-                    <label>
-                        Ancho de neumático
-                    </label>
-
-                    <select>
-
-                        <option>
-                            Tubeless
-                        </option>
-
-                        <option>
-                            Con cámara
-                        </option>
-
-                    </select>
+                    <img id="imagen-producto"
+                    src="../multimedia/Llanta moto.png"
+                    alt="llanta">
 
                 </div>
 
-                <!-- range -->
-                <div class="form-group">
+                <!-- boton aplicacion -->
+                <a href="../pages/aplicacion.html"
+                class="btn-aplicacion-link">
 
-                    <label>
-                        Ancho del neumático (mm)
-                    </label>
+                    <button class="btn-aplicacion">
 
-                    <input type="range" min="10" max="100" value="45">
+                        Aplicación
 
-                    <div class="valor-range">
-                        45
+                    </button>
+
+                </a>
+
+            </div>
+
+            <!-- lado derecho -->
+            <div class="calculadora-panel">
+
+                <!-- panel normal -->
+                <div id="panel-normal">
+
+                    <h3 id="titulo-producto"> Moto</h3>
+
+                    <!-- tipo -->
+                    <div class="form-group">
+
+                        <label> Tipo de neumático </label>
+
+                        <select>
+
+                            <option> Tubeless (TL) </option>
+
+                            <option>Con mangera (TT)</option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- slider -->
+                    <div class="form-group">
+
+                        <label>  Ancho del neumático (mm)</label>
+
+                        <div class="slider-container">
+
+                            <input id="slider"
+                            type="range"
+                            min="10"
+                            max="100"
+                            value="45">
+
+                            <div class="valor-slider"
+                            id="valor-slider">
+
+                                45
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- rueda -->
+                    <div class="form-group">
+
+                        <label>
+
+                            Tamaño del Rin (pulgadas)
+
+                        </label>
+
+                        <select id="rueda-select">
+
+                            <option>
+                                29"
+                            </option>
+
+                            <option>
+                                27.5"
+                            </option>
+
+                            <option>
+                                26"
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- botones -->
+                    <div class="botones-panel">
+
+                        <button class="btn-yellow">
+
+                            Calcular dosificación
+
+                        </button>
+
                     </div>
 
                 </div>
 
-                <!-- rueda -->
-                <div class="form-group">
+                <!-- panel camion -->
+                <div class="panel-camion"
+                id="panel-camion">
 
-                    <label>
-                        Tamaño de rueda
-                    </label>
+                    <!-- titulo -->
+                    <h3>
 
-                    <select>
+                        Vehículos pesados
 
-                        <option>
-                            29"
-                        </option>
+                    </h3>
 
-                        <option>
-                            27.5"
-                        </option>
+                    <!-- dimension -->
+                    <div class="form-group">
 
-                        <option>
-                            26"
-                        </option>
+                        <label>
 
-                    </select>
+                            Selecciona Dimension de la llanta
+
+                        </label>
+
+                        <select id="rueda-select-camion">
+
+                            <option>
+
+                                Elegir dimensión
+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- ancho -->
+                    <div class="form-group">
+
+                        <label>
+
+                            Ancho de neumático
+
+                        </label>
+
+                        <select>
+
+                            <option>
+
+                                Tubeless (TL)
+
+                            </option>
+
+                            <option>
+
+                                Con Mangera (TT)
+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- tipo uso -->
+                    <div class="form-group">
+
+                        <label>
+
+                            Tipo de uso
+
+                        </label>
+
+                        <div class="uso-btns">
+
+                            <button class="uso-btn">
+
+                                En carretera
+
+                            </button>
+
+                            <button class="uso-btn">
+
+                                Todo terreno
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- tarjeta -->
+                    <div class="tarjeta-info">
+
+                        <!-- cantidad -->
+                        <div class="cantidad-producto">
+
+                            <h2 id="resultado-kg">
+
+                                12.3 kg
+
+                            </h2>
+
+                            <p>
+
+                                ≈ 12300 G
+                                &nbsp;&nbsp;
+
+                                ≈ 12.3 L
+                                &nbsp;&nbsp;
+
+                                ≈ 433.9 OZ
+
+                            </p>
+
+                        </div>
+
+                        <!-- linea -->
+                        <div class="linea"></div>
+
+                        <!-- recomendados -->
+                        <div class="productos-recomendados">
+
+                            <h4>
+
+                                PRODUCTOS RECOMENDADOS
+
+                            </h4>
+
+                            <!-- cards -->
+                            <div class="cards-productos">
+
+                                <!-- card -->
+                                <div class="card-producto">
+
+                                    <span class="etiqueta">
+
+                                        XTRM T6
+
+                                    </span>
+
+                                    <h5>
+
+                                        Inyección por desmontaje de la llanta
+
+                                    </h5>
+
+                                    <p>
+
+                                        Sellante tubeless profesional para uso off-road.
+                                        Formula equilibrada para vehículos industriales.
+
+                                    </p>
+
+                                </div>
+
+                                <!-- card -->
+                                <div class="card-producto">
+
+                                    <span class="etiqueta">
+                                        XTRM T6 SUPER STRONG
+                                    </span>
+
+                                    <h5>
+                                        Inyección por desmontaje de la llanta
+                                    </h5>
+
+                                    <p>Fórmula reforzada para condiciones extremas.
+                                        Sella perforaciones de hasta 12 mm.</p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
 
                 </div>
-
-                <!-- boton -->
-                <button class="btn-yellow">
-
-                    Calcular dosificación
-
-                </button>
 
             </div>
 
@@ -194,13 +353,20 @@
         <div class="resultado-container">
 
             <h2>
+
                 Resultado estimado
+
             </h2>
 
             <p>
+
                 Tu llanta necesita aproximadamente
-                <span>450 ml</span> de producto.
-            </p>
+
+                <span id="resultado-ml">
+
+                    450 ml
+
+                </span> de producto.</p>
 
         </div>
 
@@ -211,47 +377,37 @@
 
         <div class="footer-container">
 
+            <!-- logo -->
             <div class="footer-logo">
 
-                <img src="../multimedia/Logo Version 01.png" alt="XTRM SYSTEMS">
+                <img src="../multimedia/Logo Version 01.png"
+                alt="XTRM SYSTEMS">
 
             </div>
 
+            <!-- contacto -->
             <div class="footer-contact">
 
-                <h2>
-                    Contacto
-                </h2>
+                <h2>Contacto </h2>
 
                 <div class="emails">
 
-                    <a href="mailto:amoreno@xtrmsystems.com.co">
-                        amoreno@xtrmsystems.com.co
-                    </a>
+                    <a href="mailto:amoreno@xtrmsystems.com.co"> amoreno@xtrmsystems.com.co </a>
 
-                    <a href="mailto:rvanegas@xtrmsystems.com.co">
-                        rvanegas@xtrmsystems.com.co
-                    </a>
+                    <a href="mailto:rvanegas@xtrmsystems.com.co"> rvanegas@xtrmsystems.com.co </a>
 
                 </div>
 
-                <p class="phone">
-                    +57 312 5444391
-                </p>
+                <p class="phone"> +57 312 5444391</p>
 
+                <!-- redes -->
                 <div class="social-icons">
 
-                    <a href="#">
-                        <i class="fab fa-youtube"></i>
-                    </a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
 
-                    <a href="#">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
 
-                    <a href="#">
-                        <i class="fab fa-instagram"></i>
-                    </a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
 
                 </div>
 
@@ -259,19 +415,17 @@
 
         </div>
 
+        <!-- footer bottom -->
         <div class="footer-bottom">
 
-            <p>
-                &copy; 2026 por XTRM SYSTEMS
-            </p>
+            <p>&copy; 2026 por XTRM SYSTEMS</p>
 
         </div>
 
     </footer>
 
-    <!-- iconos -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- js -->
+    <script src="../scripts/dosificacion.js"></script>
 
 </body>
 

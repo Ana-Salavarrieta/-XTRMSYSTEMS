@@ -1,85 +1,74 @@
-// tarjetas productos
+// producto.js
 
-document.querySelectorAll('.producto-card').forEach((card, index) => {
+const cards = document.querySelectorAll(".producto-card");
 
-    card.addEventListener('click', () => {
+const overlay = document.getElementById("detalle-producto");
 
-        // mostrar overlay
-        const detalleSeccion = document.getElementById('detalle-producto');
+const contenedores = [
+    document.querySelector(".detalle-container"),
+    document.querySelector(".detalle-container-2"),
+    document.querySelector(".detalle-container-3")
+];
 
-        detalleSeccion.style.display = 'block';
+// abrir modal al hacer click en cada card
+
+cards.forEach((card, index) => {
+
+    card.addEventListener("click", () => {
+
+        // mostrar overlay centrado
+        overlay.classList.add("active");
+
+        // bloquear scroll del body
+        document.body.style.overflow = "hidden";
 
         // ocultar todos
-        document.querySelectorAll(
-            '.detalle-container, .detalle-container-2, .detalle-container-3'
-        ).forEach(div => {
-
-            div.classList.remove('active');
-
+        contenedores.forEach(container => {
+            container.classList.remove("active");
         });
 
-        // mostrar solo el correcto
-        const clases = [
-            '.detalle-container',
-            '.detalle-container-2',
-            '.detalle-container-3'
-        ];
-
-        const target = document.querySelector(clases[index]);
-
-        if (target) {
-
-            target.classList.add('active');
-
+        // mostrar el correspondiente
+        if (contenedores[index]) {
+            contenedores[index].classList.add("active");
         }
-
-        // bloquear scroll fondo
-        document.body.style.overflow = 'hidden';
-
     });
-
 });
 
-// cerrar detalle
+// boton cerrar
+const botonesCerrar = document.querySelectorAll(".cerrar");
 
-const cerrar = document.querySelector('.cerrar');
+botonesCerrar.forEach(btn => {
 
-cerrar.addEventListener('click', () => {
-
-    document.getElementById('detalle-producto').style.display = 'none';
-
-    // ocultar todos otra vez
-    document.querySelectorAll(
-        '.detalle-container, .detalle-container-2, .detalle-container-3'
-    ).forEach(div => {
-
-        div.classList.remove('active');
-
-    });
-
-    // activar scroll normal
-    document.body.style.overflow = 'auto';
-
+    btn.addEventListener("click", cerrarModal);
 });
 
-// cerrar dando click afuera
+// Cerrar al hacer click fuera del contenedor
 
-document.getElementById('detalle-producto').addEventListener('click', (e) => {
+overlay.addEventListener("click", (e) => {
 
-    if (e.target.id === 'detalle-producto') {
-
-        document.getElementById('detalle-producto').style.display = 'none';
-
-        document.querySelectorAll(
-            '.detalle-container, .detalle-container-2, .detalle-container-3'
-        ).forEach(div => {
-
-            div.classList.remove('active');
-
-        });
-
-        document.body.style.overflow = 'auto';
-
+    if (e.target === overlay) {
+        cerrarModal();
     }
-
 });
+
+// Cerrar con Escape
+
+document.addEventListener("keydown", (e) => {
+
+    if (e.key === "Escape") {
+        cerrarModal();
+    }
+});
+
+// Función para cerrar modal
+
+function cerrarModal() {
+
+    overlay.classList.remove("active");
+
+    document.body.style.overflow = "auto";
+
+    contenedores.forEach(container => {
+        container.classList.remove("active");
+    });
+}
