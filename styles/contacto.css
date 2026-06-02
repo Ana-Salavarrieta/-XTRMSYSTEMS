@@ -35,7 +35,7 @@ canvas {
     z-index: -1;
 }
 
-/* capas (sin tocar footer) */
+/* capas */
 nav {
     position: relative;
     z-index: 2;
@@ -116,7 +116,7 @@ nav {
     margin: 0 auto;
 }
 
-/* formulario centrado */
+/* formulario */
 .formulario {
     width: 100%;
     max-width: 700px;
@@ -127,7 +127,7 @@ nav {
     text-align: left;
 }
 
-/* fila nombre + apellido (Corregido: de none a flex) */
+/* fila nombre + apellido */
 .fila {
     display: flex;
     flex-direction: row;
@@ -135,7 +135,6 @@ nav {
     width: 100%;
 }
 
-/* evita que desaparezcan campos y distribuye espacio equitativo */
 .fila .campo {
     flex: 1;
     min-width: 0;
@@ -155,11 +154,11 @@ nav {
     color: white;
 }
 
-/* inputs y textareas corregidos para forzar ancho total */
+/* inputs y textarea */
 .campo input,
 .campo textarea {
     width: 100%;
-    background: rgba(255, 255, 255, 0.03);
+    background-color: #000;
     border: 1px solid #444;
     border-radius: 12px;
     color: white;
@@ -185,9 +184,29 @@ nav {
 .campo textarea:focus {
     outline: none;
     border-color: var(--secondary-yellow);
+    background-color: #000;
+    color: white;
 }
 
-/* telefono (Corregido para unificar el fondo gris del form) */
+/* evitar que el navegador ponga fondo blanco al escribir */
+.campo input:not(:placeholder-shown),
+.campo textarea:not(:placeholder-shown) {
+    background-color: #000;
+    color: white;
+}
+
+/* autofill chrome */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px #000 inset !important;
+    -webkit-text-fill-color: #fff !important;
+    caret-color: #fff !important;
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+/* teléfono */
 .telefono-input {
     display: flex;
     align-items: center;
@@ -195,16 +214,16 @@ nav {
     height: 50px;
     border: 1px solid #444;
     border-radius: 12px;
-    background: rgba(255, 255, 255, 0.03);
+    background-color: #000;
     overflow: hidden;
 }
 
-/* focus telefono */
+/* focus teléfono */
 .telefono-input:focus-within {
     border-color: var(--secondary-yellow);
 }
 
-/* select pais */
+/* select país */
 .telefono-input select {
     width: 100px;
     height: 100%;
@@ -216,7 +235,7 @@ nav {
     cursor: pointer;
 }
 
-/* input telefono interno */
+/* input teléfono interno */
 .telefono-input input {
     flex: 1;
     width: 100%;
@@ -253,6 +272,63 @@ nav {
 
 .boton-container button:hover {
     transform: scale(1.05);
+}
+
+/* validación */
+
+.campo input.invalid,
+.campo textarea.invalid {
+    border-color: #ff4d4d !important;
+}
+
+.campo input.valid,
+.campo textarea.valid {
+    border-color: var(--primary-green) !important;
+}
+
+.telefono-input input.invalid,
+.telefono-input input.valid {
+    border: none !important;
+}
+
+.mensaje-error {
+    display: block;
+    color: #ff4d4d;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+/* mensaje de gracias */
+
+.mensaje-gracias {
+    display: none;
+    width: 100%;
+    max-width: 680px;
+    margin: 140px auto 80px;
+    padding: 60px 50px;
+    border-radius: 24px;
+    border: 1px solid var(--secondary-yellow);
+    background: rgba(255, 255, 255, 0.03);
+    text-align: center;
+}
+
+/* animacion solo al mostrarse */
+.mensaje-gracias.visible {
+    animation: aparecer 0.6s ease forwards;
+}
+
+.mensaje-gracias h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--secondary-yellow);
+}
+
+.mensaje-gracias p {
+    color: #bdbdbd;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 16px;
 }
 
 /* footer */
@@ -348,37 +424,8 @@ nav {
         gap: 15px;
     }
 
-    /* Modificado: Añadido soporte responsivo para que la fila pase a columna en móvil */
     .fila {
         flex-direction: column;
-    }
-
-    .hero-top,
-    .detalle-container,
-    .detalle-container-2,
-    .detalle-container-3 {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .hero-title h1 {
-        font-size: 3rem;
-    }
-
-    .detalle-info-1 h1,
-    .detalle-info-2 h1,
-    .detalle-info-3 h1 {
-        font-size: 1.8rem;
-    }
-
-    .detalle-imagen img {
-        max-width: 200px;
-        transform: none;
-    }
-
-    .cerrar {
-        top: 18px;
-        right: 18px;
     }
 
     .footer-container {
